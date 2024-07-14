@@ -12,11 +12,12 @@ PER_PROJECT_COSTS = [
     ManualCost("Calibration/Leveling",  x = 10 * ureg.minutes),
     ManualCost("Material change",       x = 5 * ureg.minutes),
     FixCost("Alcohol",                  x = 500 * ureg.dimensionless),
+    FixCost("Glue",                     x = 4250 * ureg.dimensionless),
 ]
 
 # This costs are not multiplied - but post processing could be piecewise...
 per_print_costs = [
-    ManualCost("Modelling",                       x = 20 * ureg.minutes),
+    ManualCost("Modelling",                       x = 30 * ureg.minutes),
     ManualCost("Slicing",                         x = 15 * ureg.minutes),
     ManualCost("Start/Remove print",              x = 5 * ureg.minutes),
     ManualCost("Post processing/Remove support",  x = 5 * ureg.minutes),

@@ -34,8 +34,8 @@ class Machine:
 #### Machine database ####
 Machines = {
     "SnapmakerA350" : Machine(name="Snapmaker A350",
-                              enery_consumption= 260 * ureg.watt,
-                              machine_price=     400000 * ureg.dimensionless,
-                              amortization_time= 3000 * ureg.hour,
+                              enery_consumption= 300 * ureg.watt,
+                              machine_price=     640000 * ureg.dimensionless,
+                              amortization_time= 5000 * ureg.hour,
                               service_cost=      30000 * ureg.dimensionless)
 }
