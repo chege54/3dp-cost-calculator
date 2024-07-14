@@ -1,4 +1,5 @@
 from pint_units import Q_, ureg
+from parameters import CostParameters
 
 class Machine:
     '''
@@ -15,7 +16,7 @@ class Machine:
         self.amortization_time = amortization_time
         self.service_cost = service_cost
 
-    def amortization_cost(self, time:Q_) -> Q_:
+    def get_amortization_cost(self, time:Q_) -> Q_:
         total_cost = (self.machine_price + self.service_cost)
 
         if total_cost > 0 and self.amortization_time > 0:
@@ -23,7 +24,11 @@ class Machine:
         else:
             result = 0
 
-        return (result * time)
+        return (result * time).to_base_units()
+
+    def get_electricity_cost(self, time:Q_) -> Q_:
+        electricity_cost = ((CostParameters.price_per_kwh * self.enery_consumption) * time).to_base_units()
+        return electricity_cost
 
 
 #### Machine database ####
