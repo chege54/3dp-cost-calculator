@@ -56,3 +56,14 @@ class ManufacturingCost:
             self.material_cost + \
             self.amortization_cost
         return total
+
+    def get_details(self) -> list:
+        return [
+            ("Machine", self.machine.name),
+            ("Material", self.material.name),
+            ("Material weight", str(self.material_weight)),
+            ("Material cost", str(self.material_cost)),
+            ("Machine time", str(self.time.to('minutes'))),
+            ("Electricity cost",str(self.electricity_cost)),
+            ("Amortization cost",str(self.amortization_cost)),
+        ]
